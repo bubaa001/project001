@@ -1,0 +1,964 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-05-21T14:41:42.901Z",
+    "user": 4,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "mwalimub (instructor)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-05-21T14:43:13.207Z",
+    "user": 4,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "jessy (student)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-05-21T14:44:35.667Z",
+    "user": 4,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "jessy (student)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-06-04T12:21:30.449Z",
+    "user": 4,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "joshua ()",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-06-04T15:25:20.327Z",
+    "user": 4,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "majimaji (Form 1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "19rx7zlxi11kqa2oh6qge8eahiahdha1",
+  "fields": {
+    "session_data": ".eJxVjMsKwyAQAP9lz0VUfObYe79B1nWtaYuBmJxK_70EcmivM8O8IeG-tbQPXtNcYIIAl1-WkZ7cD1Ee2O-LoKVv65zFkYjTDnFbCr-uZ_s3aDgaTOCUk2RUrcRkKVgvIxoXZUH0JvvMxZmIWtaqFEmtrQueNQevtSlZefh8AeilN6Q:1wW1nG:6nVHxruxCXg9dMOO6BjXhFbJOxUfhLnbxvlgVIesgrU",
+    "expire_date": "2026-06-21T00:55:14.350Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "1apk9x8m8r6zr7u2tzl2g6d7hmzpkwww",
+  "fields": {
+    "session_data": ".eJxVzDEOgzAMheG7eK6ihOBYYezeMyAnjgttRSQCU9W7V0gM7fq-X-8NI-_bNO6trOMsMICzcPkdE-dnWQ6RBy_3anJdtnVO5kjMqc3cqpTX9Wz_DiZuEwzgQ8JAFDSKVcuq5LIPNiJ25KIKOpWEhaRTR5FjDr3rE3s6PFuEzxf4aTeB:1wW3SK:4TZ9Y0A5Gv3mxCl1ZYUHlfi41Wvu3jV3MoBxxZJF__g",
+    "expire_date": "2026-06-21T02:41:44.894Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2bsmgovvor2ptf2hi5kaaln8i6bazcgs",
+  "fields": {
+    "session_data": ".eJxVjMsKwyAQAP9lz0VUfObYe79B1nWtaYuBmJxK_70EcmivM8O8IeG-tbQPXtNcYIIAl1-WkZ7cD1Ee2O-LoKVv65zFkYjTDnFbCr-uZ_s3aDgaTOCUk2RUrcRkKVgvIxoXZUH0JvvMxZmIWtaqFEmtrQueNQevtSlZefh8AeilN6Q:1wV7Hq:L7K91v9d9lmhl6at3R7Qb7jeTxa_wKihPX-IcBmwPFY",
+    "expire_date": "2026-06-18T12:35:02.717Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2ztfbm1u6233fm8g5wj9renkik3y051d",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0MWSin06N03kIUFqRpISnsy_t006UGvM5N5g6d9K37vafULwwxSweUXBorPVA_DD6r3JmKr27oEcSTitF3cGqfX9Wz_BoV6gRmS03mK5JgnPSiVB0SbCcnIPGZDoxqk1VLLEAwGktq6yKxjQhMVBuXg8wUGvDfs:1wW6Ej:TmWMmyGX2sG5KmPLpnBToQqUxBK4N5biiKg34sEhyK0",
+    "expire_date": "2026-06-21T05:39:53.144Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "csfu5p9ljsuzn1nj359km4yqwnd87y8e",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0NYoKX06N03NOyySNXQpLQn499Nkx70OjOZN0xx38q0N1mnOcEIDi6_jCI_pR4iPWK9L4qXuq0zqSNRp23qtiR5Xc_2b1BiKzACpy5ZLRy19UlQ7NCzzxyMNpIpenQeiXU3IA2ZLPbBZuytpg6NC87D5wv6IjeV:1wSd5D:WWALbXy8gtOxy7ZPj29wo5bYaIdjDyQCn6OfwyL83ho",
+    "expire_date": "2026-06-11T15:55:43.172Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "elk1ysm1odzs6qa0gyhdwz824gp0e4i7",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAQAP9lz6bZLX0tR-9-A9k-sKiBhMLJ-O-GhINeZybzhkH2rQ57K-swZeiBCC6_MEp6lvkw-SHzfVFpmbd1iupI1Gmbui25vK5n-zeo0ir0wE7Qa-NiNqUrQolH6wOyFeOJ0bJj3XlndGDjQjem5CxlRE1pJEaBzxfXQzaS:1wW4FF:Ezh9Gs15wawlkTn0MXeqASkikUkPIqPSW6Mi2sA7JQU",
+    "expire_date": "2026-06-21T03:32:17.952Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ima73s58w1a6rziik0gxc07zv83biffs",
+  "fields": {
+    "session_data": ".eJxVjLsOgzAMAP_FcxXZAeKYsXu_ATmJKbQVSDymqv9eITG0693p3tDpvg3dvtrSjQVaoBouvzBpftp0mPLQ6T67PE_bMiZ3JO60q7vNxV7Xs_0bDLoO0AJiitQYCwamngMlFLGqjsZRI3qWyCH0nirBbKyhKYEoWfYi6jHC5wvMZTaf:1wWr1j:Ybt2tv434BHBxqQ_h8sDxXPiMyv9Xpg0nfGo0MZRsDw",
+    "expire_date": "2026-06-23T07:37:35.433Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mcr9syd3su12ffejjllsrfi57hx4rbmk",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4YAXWjp0bvfQHZ5SNVAUtqT8d9Nkx70OjOZN3jat-L3nla_RJhBDXD5hUzhmeph4oPqvYnQ6rYuLI5EnLaLW4vpdT3bv0GhXmAGjWYwwbmcNLNCNlZnF5V1OhNKQoXTSMSIJqjgTDKUSOdxkjYPimWGzxf7zjf8:1wWr0j:NxlQea8jD69-ay1BIOuU6L4jU_Es3BKQyOjjoYhtLeY",
+    "expire_date": "2026-06-23T07:36:33.743Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "myediezu1g0dsx36nr1l9odxvzfmrevk",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0NYoKX06N03NOyySNXQpLQn499Nkx70OjOZN0xx38q0N1mnOcEIDi6_jCI_pR4iPWK9L4qXuq0zqSNRp23qtiR5Xc_2b1BiKzACpy5ZLRy19UlQ7NCzzxyMNpIpenQeiXU3IA2ZLPbBZuytpg6NC87D5wv6IjeV:1wW6F0:ZfMMHtDnJnD869FcUQRo3x8dYwIKwsrfFPKvZwFPxS4",
+    "expire_date": "2026-06-21T05:40:10.145Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nf28q0jdum5hqstt49uuew9szbmb6ol7",
+  "fields": {
+    "session_data": ".eJxVjM0OgjAQBt9lz6Zh-4MtR-88A_naLoKaklA4Gd_dkHDQ68xk3jRg36Zhr7IOc6aOHF1-WUR6SjlEfqDcF5WWsq1zVEeiTltVv2R53c72bzChTtSRsaMXaSS70DZA8DoBIbMbNadWAyzQHo6jxKv3ATaabE0zOo7aGKbPF_zyOB0:1wUCxN:HnPGhoGcJn8VYdecqoMUXjXDCBvkZHPTu6K3W6jnMow",
+    "expire_date": "2026-06-16T00:26:09.460Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o7wl8myu6p9qjt5a4lr9ntnyi2iom8ju",
+  "fields": {
+    "session_data": ".eJxVjMsKwyAQAP9lz0VUfObYe79B1nWtaYuBmJxK_70EcmivM8O8IeG-tbQPXtNcYIIAl1-WkZ7cD1Ee2O-LoKVv65zFkYjTDnFbCr-uZ_s3aDgaTOCUk2RUrcRkKVgvIxoXZUH0JvvMxZmIWtaqFEmtrQueNQevtSlZefh8AeilN6Q:1wW2yl:XkNNERnwSzdL9fcz-0KtqvlEFBa-yBtnWIce1U0GbTU",
+    "expire_date": "2026-06-21T02:11:11.434Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "p8u02tcivzq2p6fzxomxtwh2buh2khsn",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4YUyi60R-9-A1leUjWQlPZk_HfTpAe9zkzmDY73rbi9p9UtEWaQcPllnsMz1UPEB9d7E6HVbV28OBJx2i5uLabX9Wz_BoV7gRnY-pEmr0flbaSQPHGQOCjNWWutpDY0IvJE2QwGLUZrJJKyOTMSWgWfL85UNsM:1wQ4ea:Sg1S47fuCWPbrNbpbT01-CnUwAcnojOls9DaiW3gms0",
+    "expire_date": "2026-06-04T14:45:40.800Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qtw3vwzhpzgebceqh1t7vww1sebzufou",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0NYoKX06N03NOyySNXQpLQn499Nkx70OjOZN0xx38q0N1mnOcEIDi6_jCI_pR4iPWK9L4qXuq0zqSNRp23qtiR5Xc_2b1BiKzACpy5ZLRy19UlQ7NCzzxyMNpIpenQeiXU3IA2ZLPbBZuytpg6NC87D5wv6IjeV:1wVA5u:WjhluDnmz1KnuwWQQyjycplek0qlKcNmp9Kt8YjWfdI",
+    "expire_date": "2026-06-18T15:34:54.614Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wgr8cvsmrwq8t6lmh6104kg8bstjnx9w",
+  "fields": {
+    "session_data": ".eJxVjM0OgjAQBt9lz6Zh-4MtR-88A_naLoKaklA4Gd_dkHDQ68xk3jRg36Zhr7IOc6aOHF1-WUR6SjlEfqDcF5WWsq1zVEeiTltVv2R53c72bzChTtSRsaMXaSS70DZA8DoBIbMbNadWAyzQHo6jxKv3ATaabE0zOo7aGKbPF_zyOB0:1wWsQ3:xPdqrPwxfr2O_NwngNQClx5tayTkLQF6kvSIAKZF8Ho",
+    "expire_date": "2026-06-23T09:06:47.859Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wl38ac15hq38wagxrodjyxlmlnkozagu",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0MKC2Xt0Xvf0AC72KqBpLQn499Nkx70OjOZN0xh3-Zpb7JOC8MAPVx-WQzpKeUQ_AjlXlWqZVuXqI5EnbapsbK8bmf7N5hDm2EAjZ2z1kqOZJyPIV-16TSjN9mjF8dio8nGEhn2mMhiL4l68hk7dprg8wXE4zb2:1wUndP:SDLQ_gGOhzZa5aeu0Sv-7HfYw7bJgpCuZaugx2rQf-c",
+    "expire_date": "2026-06-17T15:35:59.459Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xp3oglhuk7kicvikqf7rak1z289o8fl8",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0NYoKX06N03NOyySNXQpLQn499Nkx70OjOZN0xx38q0N1mnOcEIDi6_jCI_pR4iPWK9L4qXuq0zqSNRp23qtiR5Xc_2b1BiKzACpy5ZLRy19UlQ7NCzzxyMNpIpenQeiXU3IA2ZLPbBZuytpg6NC87D5wv6IjeV:1wV79i:I8ODqV8YGWc4o7QGXeyAPddd4CmAwPhlr6FCSnLt-dg",
+    "expire_date": "2026-06-18T12:26:38.747Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "z7pyefbrzo37016ghyv9d18zwirqk0tg",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4YAXWjp0bvfQHZ5SNVAUtqT8d9Nkx70OjOZN3jat-L3nla_RJhBDXD5hUzhmeph4oPqvYnQ6rYuLI5EnLaLW4vpdT3bv0GhXmAGjWYwwbmcNLNCNlZnF5V1OhNKQoXTSMSIJqjgTDKUSOdxkjYPimWGzxf7zjf8:1wWIBA:cUaCj6lQs5ywDLq2J3gfmNHVHXCgJ9C96yfyQ_VKaO4",
+    "expire_date": "2026-06-21T18:25:00.251Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zkb86xmmy0cmbmkvs9pdenxcv5nwv8ag",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEwLQ9duvcbyDADUjWQlHZl_HdD0oVu7znnvkXAfSth72kNC4uLAHH63SLSM9UB-IH13iS1uq1LlEORB-3y1ji9rof7d1Cwl1HPcdJkLQKmrJ13rEwGnggNw5mcAWfniUFnHzkbUsr4hFp7SA6sBfH5Auq9N5o:1wQ2RL:W1QaJ9qDX0ZT3b2PKuqL8uau6IxfRTyOenLNPgCbItg",
+    "expire_date": "2026-06-04T12:23:51.177Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zs9drs6nebxqhlwmpxgcvxrma6ekxeik",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4YAXWjp0bvfQHZ5SNVAUtqT8d9Nkx70OjOZN3jat-L3nla_RJhBDXD5hUzhmeph4oPqvYnQ6rYuLI5EnLaLW4vpdT3bv0GhXmAGjWYwwbmcNLNCNlZnF5V1OhNKQoXTSMSIJqjgTDKUSOdxkjYPimWGzxf7zjf8:1wW9Ak:MYCQR0G7iWDU4Lvm8kPpVq-ZOp89uCUeel4ZKTGv-ms",
+    "expire_date": "2026-06-21T08:47:58.449Z"
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$HTj1eugB2OCmjo2ejy8jGY$BVf9CG2FJPrkZYxTvigeA9Cwme2E5ralTgbUKx70uh8=",
+    "last_login": "2026-05-21T14:45:40.790Z",
+    "is_superuser": false,
+    "username": "bubaa",
+    "first_name": "joshua",
+    "last_name": "reuben",
+    "email": "egliszaratus@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-21T00:46:50.266Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$OhybCQQIAlbZVLyylpWECU$yk6wompXD5z+CFiBMc//HVda23joGxH6dev2vLPDxKU=",
+    "last_login": "2026-05-21T14:30:16Z",
+    "is_superuser": true,
+    "username": "jessy",
+    "first_name": "jesca",
+    "last_name": "hermes",
+    "email": "jessy@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-21T14:30:15Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$6cvFHA5pXg3dY9Nxgyx1ud$8YVTYxgjQyEJB11JI5ovsERlgar7LPrKyx3rQCplZ/4=",
+    "last_login": "2026-06-07T05:40:10.136Z",
+    "is_superuser": true,
+    "username": "joshua",
+    "first_name": "Joshua",
+    "last_name": "John",
+    "email": "joshua@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-21T14:40:46Z",
+    "role": "",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": [
+      41,
+      42,
+      43,
+      44,
+      33,
+      34,
+      35,
+      36,
+      29,
+      30,
+      31,
+      32,
+      37,
+      38,
+      39,
+      40,
+      25,
+      26,
+      27,
+      28,
+      21,
+      22,
+      23,
+      24,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$TGEpQfsyjxwa7kBUIWC2YJ$JZ7c391rYBil+iwYb83WWPZ32b6YNDjawaGqukxJt8Y=",
+    "last_login": "2026-06-09T09:06:47.850Z",
+    "is_superuser": false,
+    "username": "bubaa001",
+    "first_name": "Joshua",
+    "last_name": "John",
+    "email": "joshuajohnr1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-02T00:07:40.378Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$C75SU7LMfmiAEEKFdTKbVj$qXN3uPN94bXGWecQXCiwRN0rgJCFp7AgpoqpTlZ/PCo=",
+    "last_login": "2026-06-03T15:35:59.450Z",
+    "is_superuser": false,
+    "username": "testinstructor",
+    "first_name": "Inst",
+    "last_name": "Ructor",
+    "email": "instructor@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-03T15:35:58.436Z",
+    "role": "instructor",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$SvPOg9suDpsjTPhfoT7dGT$ZB1G+IgjiPf00SLAA8qBDYjNaaXmsGemGxu4dbYtHOI=",
+    "last_login": "2026-06-03T15:41:17.008Z",
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "test2",
+    "last_name": "test2",
+    "email": "test2@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-03T15:41:16.085Z",
+    "role": "instructor",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$16WXu5klhzK789yofiEhiI$7hvkdXOyHoPo+rWF2j8HVSibsCdFkZPCoUdKwChO6/g=",
+    "last_login": "2026-06-07T04:02:07.763Z",
+    "is_superuser": false,
+    "username": "owaga",
+    "first_name": "owaga",
+    "last_name": "owawa",
+    "email": "owaga@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-04T12:20:11.162Z",
+    "role": "instructor",
+    "is_approved": true,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$lid8FiLpijcnNryOMG3pjv$fkA5c6pppxtcKVrhz7hvaPQHSfkovkOfrz6i7zEz7jA=",
+    "last_login": "2026-06-04T14:33:09.562Z",
+    "is_superuser": false,
+    "username": "test4",
+    "first_name": "test4",
+    "last_name": "test4",
+    "email": "test4@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-04T14:32:39.919Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$lTA9FVGJfU5iFrSL6LNjaB$aCThBnA9KOaQnAKB8lGp9h8gPFhRszbY42fksMTL+8w=",
+    "last_login": "2026-06-07T02:41:44.886Z",
+    "is_superuser": false,
+    "username": "Kipanga",
+    "first_name": "Kipanga",
+    "last_name": "Chopper",
+    "email": "kipanga@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-07T02:41:43.993Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 10,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$bWpFw5nALp649fFhUbvSYm$w3qM2Ju4ob23nOx3jUDYoACm4Vz4sKMVFq/ecjjd0bE=",
+    "last_login": "2026-06-07T03:32:17.945Z",
+    "is_superuser": false,
+    "username": "Faaaa",
+    "first_name": "Najma",
+    "last_name": "Abdi",
+    "email": "najmahabdi123@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-07T03:32:16.921Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$r4BKJcVAkMjj1FBTMtnWsa$9J2PpWNMIvBYSUM4RFKtJ0W6WMwBs2LFFYqwvS7S2v4=",
+    "last_login": "2026-06-07T05:39:53.136Z",
+    "is_superuser": false,
+    "username": "Qwinny",
+    "first_name": "Qwinny",
+    "last_name": "Robert",
+    "email": "qwinny06@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-07T05:39:52.077Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 50,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$JL4gz0dJjB1Ey6OQrqP3aL$vP9b0+S0L2IHu4btHbKwd85fmD/TaLBBwmb4RC4ITn0=",
+    "last_login": "2026-06-09T07:36:33.722Z",
+    "is_superuser": false,
+    "username": "radhia",
+    "first_name": "Radhia",
+    "last_name": "Deus",
+    "email": "radhiadeus@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-07T08:47:57.364Z",
+    "role": "instructor",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$nIrUp87UcHKHANW0apP5y2$kcxgQE+SWyHzaxd8yoB1I4pgCry2t8iMj+uFVSd4xAY=",
+    "last_login": "2026-06-09T07:37:35.421Z",
+    "is_superuser": false,
+    "username": "main",
+    "first_name": "Joshua",
+    "last_name": "John",
+    "email": "joshuajohnr1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-09T07:37:34.415Z",
+    "role": "student",
+    "is_approved": false,
+    "xp": 0,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.academicclass",
+  "pk": 1,
+  "fields": {
+    "code": "IS01",
+    "title": "mathe",
+    "schedule_string": "mon/tue/sat",
+    "meeting_link": "",
+    "instructor": 8,
+    "slug": "is01",
+    "students": [
+      5,
+      10,
+      11,
+      12,
+      14
+    ]
+  }
+},
+{
+  "model": "accounts.module",
+  "pk": 1,
+  "fields": {
+    "academic_class": 1,
+    "title": "week2 : logics",
+    "order": 1
+  }
+},
+{
+  "model": "accounts.module",
+  "pk": 2,
+  "fields": {
+    "academic_class": 1,
+    "title": "set theory",
+    "order": 2
+  }
+},
+{
+  "model": "accounts.classcontent",
+  "pk": 3,
+  "fields": {
+    "academic_class": 1,
+    "module": 1,
+    "title": "logics introduction",
+    "description": "a logic is just a... you know a logic",
+    "file": "",
+    "created_at": "2026-06-07T02:21:10.741Z",
+    "order": 0
+  }
+},
+{
+  "model": "accounts.classcontent",
+  "pk": 4,
+  "fields": {
+    "academic_class": 1,
+    "module": 2,
+    "title": "into",
+    "description": "Set theory is the study of collections of distinct, well-defined objects, called elements or members. The theory was founded by the German mathematician Georg Cantor. In set theory, sets are usually denoted by capital letters, while their elements are represented by lowercase letters. The symbol \r\nÎ“ÃªÃª indicates membership (\"belongs to\"), and \r\nÎ“ÃªÃ« indicates nonÎ“Ã‡Ã¦membership (\"does not belong to\").\r\n\r\nThere are two common ways to represent a set:\r\n\r\nRoster (or tabular) form Î“Ã‡Ã¶ All elements are listed, separated by commas, and enclosed in curly braces. The order of elements does not matter, and repetition is typically avoided.\r\nExample: {2,4,6,8}\r\n\r\nRule (or setÎ“Ã‡Ã¦builder) form Î“Ã‡Ã¶ A set is described by a common property \r\np(x)\r\nthat all its elements (and only those elements) satisfy. This is written as \r\n{xÎ“ÃªÃºp(x) holds} or {x:p(x) holds}.\r\nExample: \r\n\r\n{xÎ“ÃªÃºx is an even positive integer less than 10}",
+    "file": "",
+    "created_at": "2026-06-07T04:33:53.947Z",
+    "order": 0
+  }
+},
+{
+  "model": "accounts.quiz",
+  "pk": 3,
+  "fields": {
+    "title": "week2:logics",
+    "description": "logical qn",
+    "creator": 8,
+    "academic_class": 1,
+    "module": 1,
+    "created_at": "2026-06-07T02:23:32.963Z"
+  }
+},
+{
+  "model": "accounts.quiz",
+  "pk": 4,
+  "fields": {
+    "title": "wuuu",
+    "description": "sets0.0",
+    "creator": 8,
+    "academic_class": 1,
+    "module": 2,
+    "created_at": "2026-06-07T04:23:45.942Z"
+  }
+},
+{
+  "model": "accounts.question",
+  "pk": 3,
+  "fields": {
+    "quiz": 3,
+    "text": "do you think that.. you are solving this with logic?",
+    "order": 0
+  }
+},
+{
+  "model": "accounts.question",
+  "pk": 4,
+  "fields": {
+    "quiz": 4,
+    "text": "According to the foundational definitions of set theory developed by George Cantor, which of the following best characterizes the nature of a set's components?",
+    "order": 0
+  }
+},
+{
+  "model": "accounts.question",
+  "pk": 5,
+  "fields": {
+    "quiz": 4,
+    "text": "Which of the following statements strictly aligns with the terminological and notational rules of intuitive set theory?... do not use AI we bobbu!!",
+    "order": 1
+  }
+},
+{
+  "model": "accounts.question",
+  "pk": 6,
+  "fields": {
+    "quiz": 4,
+    "text": "I am the fence that holds the sheep, Without a gate, but the secret I keep. I list the contents, one by one, Or define a rule for the work being done. I am the container of the distinct and the clear, But if you list me twice, I simply disappear. What am I?",
+    "order": 2
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 6,
+  "fields": {
+    "question": 3,
+    "text": "no.. i saw the answer bft i impliment the logic",
+    "is_correct": true,
+    "order": 0
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 7,
+  "fields": {
+    "question": 3,
+    "text": "i think i am smarter and i use logic!",
+    "is_correct": false,
+    "order": 1
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 8,
+  "fields": {
+    "question": 3,
+    "text": "ops i was but i am now using my fate",
+    "is_correct": false,
+    "order": 2
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 9,
+  "fields": {
+    "question": 4,
+    "text": "They are an ordered collection of indistinct variables representing purely numerical or alphabetic values.",
+    "is_correct": false,
+    "order": 0
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 10,
+  "fields": {
+    "question": 4,
+    "text": "They are definite, distinguishable objects of our intuition or of our intellect conceived as a whole.",
+    "is_correct": true,
+    "order": 1
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 11,
+  "fields": {
+    "question": 4,
+    "text": "They are physical elements that must possess multiple conflicting properties to be considered distinct",
+    "is_correct": false,
+    "order": 2
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 12,
+  "fields": {
+    "question": 4,
+    "text": "They are synonymous conceptual structures that must be represented strictly by capital letters in all forms",
+    "is_correct": false,
+    "order": 3
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 13,
+  "fields": {
+    "question": 5,
+    "text": "\"Objects\" and \"elements\" are synonymous, but \"members\" refer exclusively to sets represented via the Rule Method form.",
+    "is_correct": false,
+    "order": 0
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 14,
+  "fields": {
+    "question": 5,
+    "text": "The terms \"objects,\" \"elements,\" and \"members\" of a set are synonymous words and are generally represented by small letters (e.g., a, b, c).",
+    "is_correct": true,
+    "order": 1
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 15,
+  "fields": {
+    "question": 5,
+    "text": "Elements are always denoted by capital letters, while the sets themselves are represented by small letters to maintain visual distinction.",
+    "is_correct": false,
+    "order": 2
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 16,
+  "fields": {
+    "question": 5,
+    "text": "While sets are well-defined, the objects within them cannot be considered synonymous with members unless they are enclosed in braces and separated by commas.",
+    "is_correct": false,
+    "order": 3
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 17,
+  "fields": {
+    "question": 6,
+    "text": "Braces",
+    "is_correct": true,
+    "order": 0
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 18,
+  "fields": {
+    "question": 6,
+    "text": "Set",
+    "is_correct": false,
+    "order": 1
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 19,
+  "fields": {
+    "question": 6,
+    "text": "embuu",
+    "is_correct": false,
+    "order": 2
+  }
+},
+{
+  "model": "accounts.choice",
+  "pk": 20,
+  "fields": {
+    "question": 6,
+    "text": "definite objects",
+    "is_correct": false,
+    "order": 3
+  }
+},
+{
+  "model": "accounts.librarybook",
+  "pk": 1,
+  "fields": {
+    "title": "sets",
+    "description": "huku ni kubaya manzee",
+    "file": "library/books/LECTURE_01.pptx",
+    "thumbnail": "library/thumbnails/download.jpg",
+    "uploaded_by": 8,
+    "uploaded_at": "2026-06-07T03:19:29.535Z",
+    "academic_class": null
+  }
+},
+{
+  "model": "accounts.librarybook",
+  "pk": 2,
+  "fields": {
+    "title": "HTML BASICS",
+    "description": "KNOW THE BASICS OF HTML (WEB FUNDAMENTALS)",
+    "file": "library/books/HTML_FULL_NOTES.pdf",
+    "thumbnail": "library/thumbnails/growtika-yGQmjh2uOTg-unsplash.jpg",
+    "uploaded_by": 13,
+    "uploaded_at": "2026-06-08T08:59:23.119Z",
+    "academic_class": null
+  }
+},
+{
+  "model": "accounts.librarybook",
+  "pk": 3,
+  "fields": {
+    "title": "CSS BASICS",
+    "description": "WHAT IS CSS?",
+    "file": "library/books/CSS-merged.pdf",
+    "thumbnail": "library/thumbnails/pankaj-patel-6JVlSdgMacE-unsplash.jpg",
+    "uploaded_by": 13,
+    "uploaded_at": "2026-06-08T09:04:05.094Z",
+    "academic_class": null
+  }
+},
+{
+  "model": "accounts.librarybook",
+  "pk": 4,
+  "fields": {
+    "title": "ENGLISH COURSE BOOK",
+    "description": "GET THE KNOWLEDGE OF ENGLISH COURSE",
+    "file": "library/books/ENGLISH_CORSE_BOOK.pdf",
+    "thumbnail": "library/thumbnails/ivan-shilov-ucUB9wxkPgY-unsplash.jpg",
+    "uploaded_by": 13,
+    "uploaded_at": "2026-06-08T09:40:32.230Z",
+    "academic_class": null
+  }
+},
+{
+  "model": "accounts.librarybook",
+  "pk": 5,
+  "fields": {
+    "title": "OBJECT ORIENTED PROGRAMMING",
+    "description": "INTRODUCTION OF PROGRAMMING BASICS",
+    "file": "library/books/OBJECT_ORIENTED_PROGRAMMING.pdf",
+    "thumbnail": "library/thumbnails/istockphoto-2177834821-1024x1024.jpg",
+    "uploaded_by": 13,
+    "uploaded_at": "2026-06-08T09:50:45.571Z",
+    "academic_class": null
+  }
+},
+{
+  "model": "accounts.instructorprofile",
+  "pk": 1,
+  "fields": {
+    "user": 8,
+    "title_role": "mathematics is soo easy braa!!!",
+    "bio": "i am owaga yesii.. so that now .. oke i will be be giving quiz.. you know am sayin'",
+    "avatar": "instructor_avatars/WhatsApp_Image_2026-06-07_at_8.02.01_AM.jpeg",
+    "established_year": 2026,
+    "academic_focus": [
+      {
+        "title": "pass",
+        "description": "you will pass"
+      }
+    ],
+    "methodologies": [
+      {
+        "name": "enyew what is methodology"
+      }
+    ],
+    "manuscripts": [
+      {
+        "publication_year": 2026,
+        "title": "blackship",
+        "publisher_tag": "owawa"
+      }
+    ],
+    "created_at": "2026-06-07T04:38:33.122Z",
+    "updated_at": "2026-06-07T05:05:13.477Z"
+  }
+},
+{
+  "model": "accounts.studentquizsubmission",
+  "pk": 3,
+  "fields": {
+    "student": 10,
+    "quiz": 3,
+    "score": 1,
+    "total": 1,
+    "answers": {
+      "3": 6
+    },
+    "submitted_at": "2026-06-07T02:42:56.708Z"
+  }
+},
+{
+  "model": "accounts.studentquizsubmission",
+  "pk": 4,
+  "fields": {
+    "student": 11,
+    "quiz": 3,
+    "score": 0,
+    "total": 1,
+    "answers": {
+      "3": 7
+    },
+    "submitted_at": "2026-06-07T03:38:48.123Z"
+  }
+},
+{
+  "model": "accounts.studentquizsubmission",
+  "pk": 5,
+  "fields": {
+    "student": 12,
+    "quiz": 3,
+    "score": 1,
+    "total": 1,
+    "answers": {
+      "3": 6
+    },
+    "submitted_at": "2026-06-07T05:42:40.371Z"
+  }
+},
+{
+  "model": "accounts.studentquizsubmission",
+  "pk": 6,
+  "fields": {
+    "student": 12,
+    "quiz": 4,
+    "score": 0,
+    "total": 3,
+    "answers": {
+      "4": 9,
+      "5": 13,
+      "6": 20
+    },
+    "submitted_at": "2026-06-07T05:48:30.674Z"
+  }
+}
+]

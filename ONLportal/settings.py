@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'ONLportal.wsgi.application'
 import re
 import urllib.parse
 
-DATABASE_URL = config('DATABASE_URL')
+DATABASE_URL = config('DATABASE_URL', default='')
 
 # Parse the DATABASE_URL to extract components
 _db_url = DATABASE_URL
