@@ -9,7 +9,7 @@ import logging
 from typing import Any, Dict, List, Optional
 from django.conf import settings
 from django.db import models as dj_models
-from ONLportal.supabase_client import supabase
+from ONLportal.supabase_client import supabase_service as supabase
 from sync_manager.models import SyncRecord
 from sync_manager.sync.file_uploader import upload_file
 from sync_manager.sync.remote_schema import ensure_remote_schema
@@ -34,10 +34,10 @@ MODEL_TO_TABLE: Dict[str, str] = {
 }
 
 # Columns to strip from payloads before syncing (internal / auto-managed)
-ALWAYS_STRIP_COLUMNS = {'password'}  # never push hashed passwords upstream
+ALWAYS_STRIP_COLUMNS = set()  # hashed passwords are safe to sync over HTTPS
 
 COLUMNS_TO_STRIP_BY_TABLE: Dict[str, set] = {
-    'accounts_user': {'password', 'last_login'},
+    'accounts_user': {'last_login'},
     'accounts_studentquizsubmission': set(),
 }
 
@@ -56,12 +56,14 @@ def sync_pending_records() -> Dict[str, int]:
     batch_size = getattr(settings, 'SYNC_BATCH_SIZE', 50)
     max_retries = getattr(settings, 'SYNC_RETRY_MAX', 5)
 
-    # Ensure remote tables exist (idempotent, fast after first run)
+    # Ensure remote tables exist (idempotent, fast after first run).
+    # If this fails due to connectivity, we still try syncing individual
+    # records — tables likely exist from a previous successful run.
+    # Individual record failures are caught per-record below.
     try:
         ensure_remote_schema()
     except Exception:
-        logger.exception("Failed to ensure remote schema — will retry next cycle")
-        return {'synced': 0, 'failed': 0, 'skipped': 0}
+        logger.warning("Schema check skipped — will attempt records anyway.")
 
     pending = SyncRecord.objects.filter(
         status='pending',
@@ -83,7 +85,13 @@ def sync_pending_records() -> Dict[str, int]:
             record.mark_synced()
             synced += 1
         except Exception as exc:
-            logger.error("Sync failed for %s: %s", record, exc)
+            # Connectivity errors are expected offline — log as warning
+            err_str = str(exc).lower()
+            if any(kw in err_str for kw in ('name or service not known', 'getaddrinfo',
+                                               'connection refused', 'timeout')):
+                logger.warning("Sync deferred (offline) for %s", record)
+            else:
+                logger.error("Sync failed for %s: %s", record, exc)
             record.mark_failed(str(exc))
             failed += 1
 

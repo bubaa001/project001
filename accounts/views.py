@@ -704,6 +704,7 @@ def library_delete_view(request, book_id):
         if book.thumbnail:
             book.thumbnail.delete(save=False)
         book.delete()
+        trigger_sync_after_action()  # push deletion upstream ASAP
         return redirect('library')
     return redirect('library')
 

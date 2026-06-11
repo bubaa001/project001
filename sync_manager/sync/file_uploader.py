@@ -7,7 +7,7 @@ import logging
 from pathlib import Path
 from typing import Optional
 from django.conf import settings
-from ONLportal.supabase_client import supabase
+from ONLportal.supabase_client import supabase_service as supabase
 
 logger = logging.getLogger('sync_manager.file_uploader')
 

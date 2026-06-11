@@ -24,7 +24,7 @@ REMOTE_SCHEMA_SQL = """
 -- Custom User table (mirrors accounts.User)
 CREATE TABLE IF NOT EXISTS accounts_user (
     id                BIGINT PRIMARY KEY,
-    password          VARCHAR(128) NOT NULL,
+    password          VARCHAR(128),
     last_login        TIMESTAMPTZ,
     is_superuser      BOOLEAN NOT NULL DEFAULT FALSE,
     username          VARCHAR(150) NOT NULL UNIQUE,
@@ -164,35 +164,52 @@ CREATE TABLE IF NOT EXISTS accounts_studentquizsubmission (
 def ensure_remote_schema() -> None:
     """
     Idempotent: execute the DDL above on the remote Supabase Postgres.
-    Uses the Supabase Management API (SQL endpoint) via the service key.
+    Connects directly via psycopg2 using the DATABASE_URL connection string.
     """
+    from urllib.parse import unquote, urlparse
+    import psycopg2
+    from django.conf import settings
+
     logger.info("Ensuring remote schema exists on Supabase...")
+
+    db_url = settings.SUPABASE_DATABASE_URL
+    parsed = urlparse(db_url)
+
     try:
-        # The supabase-py client's rpc() can run arbitrary SQL if the
-        # Postgres extension pg_exec is installed.  For simplicity and
-        # reliability we use the REST API directly.
-        import requests
-        from django.conf import settings
+        conn = psycopg2.connect(
+            host=parsed.hostname,
+            port=parsed.port or 6543,
+            dbname=parsed.path.lstrip('/'),
+            user=unquote(parsed.username),
+            password=unquote(parsed.password),
+            sslmode='require',
+            connect_timeout=10,
+        )
+        conn.autocommit = True
+        cur = conn.cursor()
 
-        # Strip extra whitespace and split into individual statements
+        # Split into individual statements and execute each
         statements = [s.strip() for s in REMOTE_SCHEMA_SQL.split(';') if s.strip()]
-
         for stmt in statements:
             stmt = stmt.strip() + ';'
-            resp = requests.post(
-                f"{settings.SUPABASE_URL}/rest/v1/rpc/exec_sql",
-                headers={
-                    'apikey': settings.SUPABASE_KEY,
-                    'Authorization': f'Bearer {settings.SUPABASE_KEY}',
-                    'Content-Type': 'application/json',
-                },
-                json={'query': stmt},
-                timeout=30,
-            )
-            if resp.status_code not in (200, 201, 204):
-                logger.warning("Schema statement returned %d: %s", resp.status_code, resp.text[:200])
+            try:
+                cur.execute(stmt)
+            except Exception as exc:
+                err_str = str(exc).lower()
+                # "already exists" errors are fine — schema is idempotent
+                if 'already exists' in err_str or 'duplicate' in err_str:
+                    logger.debug("Table already exists, skipping.")
+                else:
+                    logger.warning("Schema statement failed: %s", exc)
 
+        cur.close()
+        conn.close()
         logger.info("Remote schema check completed.")
     except Exception as exc:
-        logger.error("Failed to ensure remote schema: %s", exc)
+        err_str = str(exc).lower()
+        if any(kw in err_str for kw in ('name or service not known', 'getaddrinfo',
+                                          'connection refused', 'timeout')):
+            logger.warning("Schema check skipped (offline): %s", exc)
+        else:
+            logger.error("Failed to ensure remote schema: %s", exc)
         raise

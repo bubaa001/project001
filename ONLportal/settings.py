@@ -177,25 +177,11 @@ Q_CLUSTER = {
     'catch_up': False,            # don't replay missed cron tasks on start
 }
 
-# Sync schedule (django-q2 cron syntax)
-Q_SCHEDULE = {
-    # Check connectivity every 30 seconds
-    'check_connectivity': {
-        'func': 'sync_manager.scheduler.check_connectivity',
-        'schedule': 30,
-        'repeats': -1,
-    },
-    # Attempt sync every 60 seconds (only runs if online)
-    'sync_all_pending': {
-        'func': 'sync_manager.scheduler.sync_all_pending',
-        'schedule': 60,
-        'repeats': -1,
-    },
-}
-
 # ================================================================
 # Offline Sync Settings
 # ================================================================
+# NOTE: The sync schedule lives in the database (django_q.Schedule table),
+# created automatically by sync_manager.apps.SyncManagerConfig.ready().
 SYNC_CONNECTIVITY_TIMEOUT = 5    # seconds to wait for a connectivity check
 SYNC_BATCH_SIZE = 50             # max sync records to process per batch
 SYNC_RETRY_MAX = 5               # max retries before marking a record 'failed' permanently

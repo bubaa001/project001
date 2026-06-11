@@ -21,19 +21,7 @@ def trigger_sync_after_action() -> None:
     by django-q2's built-in retry mechanism.
     """
     try:
-        async_task(
-            'sync_manager.sync.tasks.sync_pending_records',
-            hook=_sync_hook,
-        )
+        async_task('sync_manager.sync.tasks.sync_pending_records')
         logger.debug("Immediate sync task queued.")
     except Exception:
-        logger.debug("Could not queue async sync (django-q2 cluster may not be running).")
-        # This is fine — the cron job will pick it up on the next cycle.
-
-
-def _sync_hook(task) -> None:
-    """Log the result of an async sync task."""
-    if task.success:
-        logger.info("Async sync completed: %s", task.result)
-    else:
-        logger.warning("Async sync failed: %s", task.result)
+        pass  # qcluster not running — cron picks it up next cycle
