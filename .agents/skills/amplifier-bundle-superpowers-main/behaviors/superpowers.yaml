@@ -1,0 +1,16 @@
+bundle:
+  name: superpowers-behavior
+  version: 1.0.0
+  description: Superpowers workflow system - TDD, systematic debugging, structured planning
+
+# This behavior provides the Superpowers capabilities without bundling foundation
+# Use this if you want to compose superpowers into your own bundle
+
+agents:
+  include:
+    - superpowers:superpowers-expert
+
+context:
+  include:
+    - superpowers:context/instructions.md
+    - superpowers:context/philosophy.md

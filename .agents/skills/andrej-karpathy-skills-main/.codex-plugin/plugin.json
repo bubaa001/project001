@@ -1,0 +1,42 @@
+{
+  "name": "andrej-karpathy-skills",
+  "version": "1.0.0",
+  "description": "A Codex-native packaging of Andrej Karpathy-inspired coding-agent guidelines: think first, keep it simple, change surgically, and verify the goal.",
+  "author": {
+    "name": "Duola",
+    "url": "https://github.com/duolahypercho"
+  },
+  "homepage": "https://github.com/duolahypercho/andrej-karpathy-skills",
+  "repository": "https://github.com/duolahypercho/andrej-karpathy-skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skill",
+    "coding",
+    "agent-behavior",
+    "code-review",
+    "refactoring"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Andrej Karpathy Skill",
+    "shortDescription": "Apply Karpathy-inspired coding-agent discipline inside Codex.",
+    "longDescription": "A Codex skill inspired by Andrej Karpathy's observations on coding agents. It teaches Codex to surface assumptions, avoid overengineering, keep diffs surgical, and define verifiable success criteria.",
+    "developerName": "Duola",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/duolahypercho/andrej-karpathy-skills",
+    "privacyPolicyURL": "https://github.com/duolahypercho/andrej-karpathy-skills/blob/main/LICENSE",
+    "termsOfServiceURL": "https://github.com/duolahypercho/andrej-karpathy-skills/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Apply the Andrej Karpathy coding guidelines to this task.",
+      "Think before coding and surface assumptions.",
+      "Simplify this implementation without widening scope.",
+      "Review this patch for unrelated edits and weak verification."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

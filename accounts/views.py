@@ -7,6 +7,7 @@ from django.http import JsonResponse, HttpResponseForbidden, HttpResponseBadRequ
 from django.db import models
 from .forms import RegisterForm, LoginForm
 from .models import User, AcademicClass, Module, ClassContent, ArchiveCategory, ArchiveItem, Quiz, Question, Choice, StudentQuizSubmission, LibraryBook, InstructorProfile
+from sync_manager.triggers import trigger_sync_after_action
 
 
 
@@ -169,6 +170,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            trigger_sync_after_action()  # immediate sync attempt for new account
             if user.role == 'student':
                 return redirect('select_level')
             elif user.role == 'instructor':
@@ -677,6 +679,7 @@ def library_view(request):
                 file=uploaded_file, thumbnail=request.FILES.get('thumbnail'),
                 uploaded_by=request.user,
             )
+            trigger_sync_after_action()  # push new book upstream ASAP
             return redirect('library')
 
     return render(request, 'library.html', {'books': books})
@@ -743,6 +746,7 @@ def student_take_quiz_view(request, quiz_id):
         )
         request.user.xp = (request.user.xp or 0) + (score * 50)
         request.user.save(update_fields=['xp'])
+        trigger_sync_after_action()  # push quiz result upstream ASAP
         return redirect('student_quiz_result', quiz_id=quiz_id)
 
     return render(request, 'student_take_quiz.html', {'quiz': quiz, 'questions': questions})

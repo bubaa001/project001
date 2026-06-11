@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_q',
     'accounts',
+    'sync_manager',
 ]
 
 MIDDLEWARE = [
@@ -82,37 +84,24 @@ WSGI_APPLICATION = 'ONLportal.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+#
+# OFFLINE-FIRST: SQLite is always the local primary database.
+# Supabase PostgreSQL is a remote sync target, never a direct Django connection.
 
-import re
-import urllib.parse
-
-DATABASE_URL = config('DATABASE_URL', default='')
-
-# Parse the DATABASE_URL to extract components
-_db_url = DATABASE_URL
-_db_match = re.match(r'postgresql://(.+?):(.+?)@(.+?):(\d+)/(.+?)$', _db_url)
-if _db_match:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': _db_match.group(5),
-            'USER': urllib.parse.unquote(_db_match.group(1)),
-            'PASSWORD': urllib.parse.unquote(_db_match.group(2)),
-            'HOST': _db_match.group(3),
-            'PORT': _db_match.group(4),
-            'OPTIONS': {
-                'sslmode': 'require',
-            },
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    # Fallback to SQLite if DATABASE_URL is not set or invalid
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+}
+
+# ================================================================
+# Supabase Remote Sync Configuration (read by the sync_manager app)
+# ================================================================
+SUPABASE_URL = config('SUPABASE_URL')
+SUPABASE_KEY = config('SUPABASE_KEY')
+# Full DATABASE_URL is kept for optional direct psql inspection only.
+SUPABASE_DATABASE_URL = config('DATABASE_URL', default='')
 
 
 # Password validation
@@ -165,3 +154,49 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+
+# ================================================================
+# django-q2 Configuration (Background Task Queue with Django ORM Broker)
+# ================================================================
+Q_CLUSTER = {
+    'name': 'ONLportal',
+    'workers': 2,                 # 2 worker processes
+    'recycle': 500,               # recycle worker after 500 tasks
+    'timeout': 120,               # 120s task timeout
+    'retry': 300,                 # retry failed tasks after 300s (must be > timeout)
+    'compress': True,             # compress task payloads in the DB
+    'save_limit': 250,            # keep last 250 task results
+    'queue_limit': 500,           # max queued tasks
+    'cpu_affinity': 1,            # pin each worker to a CPU core
+    'label': 'Django Q2',
+    'broker_class': 'django_q.brokers.orm.ORM',  # Django ORM broker (no Redis)
+    'redis': None,                # explicit: no Redis dependency
+    'guard_cycle': 5,             # monitor / heartbeat every 5s
+    'poll': 2,                    # poll DB for new tasks every 2s
+    'catch_up': False,            # don't replay missed cron tasks on start
+}
+
+# Sync schedule (django-q2 cron syntax)
+Q_SCHEDULE = {
+    # Check connectivity every 30 seconds
+    'check_connectivity': {
+        'func': 'sync_manager.scheduler.check_connectivity',
+        'schedule': 30,
+        'repeats': -1,
+    },
+    # Attempt sync every 60 seconds (only runs if online)
+    'sync_all_pending': {
+        'func': 'sync_manager.scheduler.sync_all_pending',
+        'schedule': 60,
+        'repeats': -1,
+    },
+}
+
+# ================================================================
+# Offline Sync Settings
+# ================================================================
+SYNC_CONNECTIVITY_TIMEOUT = 5    # seconds to wait for a connectivity check
+SYNC_BATCH_SIZE = 50             # max sync records to process per batch
+SYNC_RETRY_MAX = 5               # max retries before marking a record 'failed' permanently
+SYNC_CONNECTIVITY_CACHE_TTL = 10 # seconds before re-checking connectivity
