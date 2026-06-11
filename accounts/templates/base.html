@@ -19,20 +19,29 @@
     <!-- Center: Nav Links (desktop only) -->
     <div class="hidden md:flex items-center gap-8 font-mono text-xs font-bold uppercase tracking-widest">
       {% if user.is_authenticated %}
-        {% if user.role == 'admin' or user.is_superuser %}
+        
+      <!-- superuser -->
+      {% if user.role == 'admin' or user.is_superuser %}
           <a href="{% url 'admin_dashboard' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Dashboard</a>
-        {% elif user.role == 'instructor' %}
+        
+        <!-- if ni instructor   -->
+          {% elif user.role == 'instructor' %}
           <a href="{% url 'instructor_dashboard' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Dashboard</a>
           <a href="{% url 'instructor_manage_classes' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Classes</a>
           <a href="{% url 'teacher_profile' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Profile</a>
-        {% else %}
+        
+        <!-- if ni student -->
+          {% else %}
           <a href="{% url 'study_dashboard' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Dashboard</a>
           <a href="{% url 'select_level' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Classes</a>
           <a href="{% url 'student_profile' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Profile</a>
         {% endif %}
-      {% else %}
+      
+      <!-- if user haja login we need a login btn  -->
+        {% else %}
         <a href="{% url 'login' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Dashboard</a>
-      {% endif %}
+      
+        {% endif %}
       <a href="{% url 'archive_index' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Archive</a>
       <a href="{% url 'library' %}" class="text-gray-500 hover:text-[#4f14e0] transition-colors">Library</a>
     </div>

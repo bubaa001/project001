@@ -1,4 +1,4 @@
-import random
+import random #ili tupate random quiz choices
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
@@ -9,9 +9,9 @@ from .forms import RegisterForm, LoginForm
 from .models import User, AcademicClass, Module, ClassContent, ArchiveCategory, ArchiveItem, Quiz, Question, Choice, StudentQuizSubmission, LibraryBook, InstructorProfile
 
 
-# ──────────────────────────────────────────────
+
 # HELPER: XP Tier System
-# ──────────────────────────────────────────────
+
 
 def get_tier_info(xp):
     """Return (level, tier_title, range_min, range_max) for a given XP value."""
@@ -45,9 +45,8 @@ def build_xp_context(current_xp):
     }
 
 
-# ──────────────────────────────────────────────
 # HELPER: Quiz Question Results Builder
-# ──────────────────────────────────────────────
+
 
 def build_question_results(submission, questions):
     """Build a list of question result dicts from a submission and its questions."""
@@ -72,9 +71,9 @@ def build_question_results(submission, questions):
     return results
 
 
-# ──────────────────────────────────────────────
+
 # HELPER: Leaderboard Data
-# ──────────────────────────────────────────────
+
 
 def get_leaderboard_data(request):
     """Build leaderboard context: top 5 students, current user rank, tier list."""
@@ -135,9 +134,9 @@ def get_leaderboard_data(request):
     }
 
 
-# ──────────────────────────────────────────────
+
 # VIEWS: Core / Auth
-# ──────────────────────────────────────────────
+
 
 def home_view(request):
     student_count = User.objects.filter(role='student').count()
@@ -202,9 +201,9 @@ def logout_view(request):
     return redirect('home')
 
 
-# ──────────────────────────────────────────────
+
 # VIEWS: Student
-# ──────────────────────────────────────────────
+
 
 def select_level_view(request):
     """Show all classes that have an instructor assigned, for students to enroll."""
@@ -320,9 +319,9 @@ def student_profile_view(request):
     })
 
 
-# ──────────────────────────────────────────────
+
 # VIEWS: Instructor
-# ──────────────────────────────────────────────
+
 
 def instructor_dashboard_view(request):
     if not request.user.is_authenticated:
@@ -518,9 +517,9 @@ def instructor_class_view(request, slug):
     })
 
 
-# ──────────────────────────────────────────────
+
 # VIEWS: Instructor Profile
-# ──────────────────────────────────────────────
+
 
 @login_required
 def teacher_profile_view(request, username=None):
@@ -606,9 +605,8 @@ def edit_instructor_profile_view(request):
     return render(request, 'edit_instructor_profile.html', {'profile': profile})
 
 
-# ──────────────────────────────────────────────
 # VIEWS: Admin
-# ──────────────────────────────────────────────
+
 
 @login_required
 def admin_dashboard_view(request):
@@ -635,9 +633,9 @@ def toggle_instructor_approval_view(request, user_id, approve=True):
     return JsonResponse({'status': 'approved' if approve else 'disapproved'})
 
 
-# ──────────────────────────────────────────────
+
 # VIEWS: Archive / Library
-# ──────────────────────────────────────────────
+
 
 def archive_view(request, slug=None):
     """Combined archive index + category view."""
@@ -707,9 +705,9 @@ def library_delete_view(request, book_id):
     return redirect('library')
 
 
-# ──────────────────────────────────────────────
+
 # VIEWS: Quiz System
-# ──────────────────────────────────────────────
+
 
 @login_required
 def student_take_quiz_view(request, quiz_id):
